@@ -1,67 +1,49 @@
-import java.io.File;
-import java.util.NoSuchElementException;
-
+/**
+ * DO THIS
+ */
 public class Graph {
     private final int V;
     private int E;
     private Bag<Integer>[] adj;
 
-
+    /**
+     * Constructor for graph with no edges and V vertices
+     * Puts V nr of adjacency's in a bag
+     * @param V is the number of vertices in graph
+     */
     public Graph(int V){
         if(V < 0)throw new IllegalArgumentException();
         this.V = V;
-        this.E = E;
+        this.E = 0;
         adj = (Bag<Integer>[]) new Bag[V];
         for(int v = 0; v < V; v++){
-            adj[v] = new Bag<Integer>();
+            adj[v] = new Bag<>();
         }
     }
 
-    public Graph(In in){
-        if (in == null)throw new IllegalArgumentException();
-        try{
-            this.V = in.readInt();
-            if(V < 0) throw new IllegalArgumentException();
-            adj = (Bag<Integer>[]) new Bag[V];
-            for(int v = 0; v < V; v++){
-                adj[v] = new Bag<Integer>();
-            }
-            int E = in.readInt();
-            if(E < 0) throw new IllegalArgumentException();
-            for(int i = 0; i < E; i++){
-                int v = in.readInt();
-                int w = in.readInt();
-                validateVertex(v);
-                validateVertex(w);
-                addEdge(v, w);
-            }
-
-        }
-        catch (NoSuchElementException e) {throw new IllegalArgumentException();}
-    }
-
-    public Graph(Graph G){
-        this.V = G.V();
-        this.E = G.E();
-        if(V < 0) throw new IllegalArgumentException();
-        adj = (Bag<Integer>[]) new Bag[V];
-        for(int v = 0; v < V; v++){
-            adj[v] = new Bag<Integer>();
-        }
-    }
-
+    /**
+     *
+     * @return the number of vertices in graph
+     */
     public int V(){
         return V;
     }
-    public int E(){
-        return E;
-    }
 
+    /**
+     * Checks if the vertex is within the limits of the graph
+     * @param v is vertex to be validated
+     */
     private void validateVertex(int v){
         if((v < 0)||(v >= V)) throw new IllegalArgumentException();
     }
 
-    private void addEdge(int v, int w){
+    /**
+     * Used in undirected graphs
+     * Adds validated edges with adjacency's to one another
+     * @param v is vertex one
+     * @param w is vertex two
+     */
+    public void addEdge(int v, int w){
         validateVertex(v);
         validateVertex(w);
         E++;
@@ -69,13 +51,26 @@ public class Graph {
         adj[w].add(v);
     }
 
+    /**
+     * Used in directed graphs
+     * Adds validated vertices and adds one adjacency to the second edge
+     * @param v
+     * @param w
+     */
+    public void addEdgeD(int v, int w){
+        validateVertex(v);
+        validateVertex(w);
+        E++;
+        adj[v].add(w);
+    }
+
+    /**
+     * Iterator that iterates through all adjacency's
+     * @param v is given vertex in which we seek adjacency's of
+     * @return the adjacency's of vertex v
+     */
     Iterable<Integer> adj(int v){
         validateVertex(v);
         return adj[v];
-    }
-
-    public int degree(int v){
-        validateVertex(v);
-        return adj[v].size();
     }
 }
