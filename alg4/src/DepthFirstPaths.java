@@ -1,5 +1,13 @@
-/**
- * DO THIS
+/*
+ * Author: Matilda Qvick 001105-0606
+ * Generated: 30/9 - 2020
+ * Last updated: 7/10 - 2020
+ * Solves: Finds path between two vertices using depth
+ *         first search.
+ *         Class contains iterable that iterates though
+ *         the edges from source to target, putting them
+ *         in a stack.
+ * How to use: Only used from class Uppgift1
  */
 public class DepthFirstPaths {
     private boolean[] marked;

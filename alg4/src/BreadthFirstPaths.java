@@ -1,5 +1,12 @@
-/**
- * DO THIS
+/*
+ * Author: Matilda Qvick 001105-0606
+ * Generated: 30/9 - 2020
+ * Last updated: 7/10 - 2020
+ * Solves: Finds paths between two vertices by using breadth
+ *         first search.
+ *         Class also contains an iterable that iterates through
+ *         the paths, placing the vertices in a stack of paths.
+ * How to use: Used from Uppgift 2 and 3
  */
 public class BreadthFirstPaths {
     private boolean[] marked;

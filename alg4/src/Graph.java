@@ -1,5 +1,15 @@
-/**
- * DO THIS
+/*
+ * Author: Matilda Qvick 001105-0606
+ * Generated: 30/9 - 2020
+ * Last updated 6/10 - 2020
+ * Solves: Created a graph  with vertices and edges. For adjacency's
+ *         a bag is used to store the data. Adjacency's contain
+ *         all edges to a specific vertex. An iterable has been
+ *         implemented to iterate through the adjacency's.
+ *         The class contains methods for both directed and undirected
+ *         graphs. The only distinction being addEdge (for undirected)
+ *         and addEdgeD (for directed).
+ * Hos to use: Is used in classes Uppgift1, 2, 3
  */
 public class Graph {
     private final int V;

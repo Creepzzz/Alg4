@@ -1,5 +1,18 @@
-/**
- * DO THIS
+/*
+ * Author: Matilda Qvick 001105-0606
+ * Generated: 2/10 - 2020
+ * Last updated 6/10 - 2020
+ * Solves: Takes data from a file of pairs of states and
+ *         puts these into a directed graph.
+ *         Breadth first search is then used to find a path
+ *         between requested vertices from viewer. If such
+ *         path exists, it will be displayed to the viewer.
+ *         The direction is displayed with arrows.
+ * How to use: The viewer is asked to put in and X and a Y and
+ *             if there is a path between X and Y, the path
+ *             will be displayed to the viewer in the form of
+ *             vertices with arrows pointing the direction of the
+ *             path.
  */
 
 import java.io.File;

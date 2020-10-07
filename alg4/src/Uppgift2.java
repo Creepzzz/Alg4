@@ -1,5 +1,16 @@
-/**
- * DO THIS
+/*
+ * Author: Matilda Qvick 001105-0606
+ * Generated: 1/10 - 2020
+ * Last updated: 5/10 - 2020
+ * Solves: Takes input from a file of paired states and
+ *         puts the pairs into a graph with edge-connections.
+ *         Breadth first search is then used to find a path
+ *         between the vertices requested by the viewer. If there
+ *         is a path this will be displayed.
+ * How to use: The viewer is asked to put in and X and a Y and
+ *             if there is a path between X and Y, the path
+ *             will be displayed to the viewer in the form
+ *             of passed vertices.
  */
 
 import java.io.File;
